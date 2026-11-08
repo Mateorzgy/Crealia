@@ -1,0 +1,6 @@
+import {Browser,sleep} from 'file:///C:/Users/mateo/.codex/skills/design-taste-frontend/scripts/lib/cdp.mjs';
+import {frame} from 'file:///C:/Users/mateo/.codex/skills/design-taste-frontend/scripts/lib/probe.mjs';
+const b=await Browser.launch();
+try{const p=await b.newPage({width:390,height:844});await p.goto('http://127.0.0.1:4173');
+const results=[];for(const y of [1688,2000,2200,2400,2532,2600]){await p.eval(y=>window.scrollTo({top:y,behavior:'instant'}),y);await sleep(900);const sample=await p.eval(frame);results.push({y,covered:sample.covered});}
+console.log(JSON.stringify(results));const check=await p.eval(()=>{window.scrollTo({top:1688,behavior:'instant'});const el=document.querySelector('#aside-heading');const range=document.createRange();range.selectNodeContents(el);const result=[];for(const r of range.getClientRects()){for(const dy of [-.2,.2])for(const fx of [.12,.37,.63,.88]){const x=r.left+r.width*fx,y=r.top+r.height*.55+Math.min(r.height,parseFloat(getComputedStyle(el).lineHeight))*dy;if(x<0||x>=innerWidth||y<0||y>=innerHeight)continue;const hit=document.elementFromPoint(x,y);result.push({x,y,hit:hit?.outerHTML.slice(0,250),rect:{top:r.top,bottom:r.bottom}});}}return result;});console.log(JSON.stringify(check));await p.close();}finally{await b.close();}
