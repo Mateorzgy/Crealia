@@ -1,2 +1,0 @@
-import {writeFile} from 'node:fs/promises';
-for(const [name,url] of [['Poppins','https://raw.githubusercontent.com/google/fonts/main/ofl/poppins/OFL.txt'],['Inter','https://raw.githubusercontent.com/google/fonts/main/ofl/inter/OFL.txt']]){const r=await fetch(url);if(!r.ok)throw Error(`${name} ${r.status}`);await writeFile(`assets/${name}-OFL.txt`,await r.text());console.log(`${name}: license saved`);}
