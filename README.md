@@ -1,5 +1,5 @@
 # Crealia
-Ejecutá `npm run dev` y visitá http://127.0.0.1:4173. No requiere instalar dependencias. Hosting y dominio pendientes.
+Ejecutá `npm run dev` y visitá http://127.0.0.1:4173. No requiere instalar dependencias. Hosting: GitHub Pages. Dominio propio pendiente.
 
 Versión actual: v3. Portada explícita sobre diseño web, computadora con capas interactivas y cuatro ejemplos compactos: filtros de catálogo, contador de productos, carta y horarios. Son ilustraciones, sin compras ni reservas reales.
 
@@ -11,7 +11,7 @@ Archivos: index.html, styles.css, app.js. Recursos locales en assets; fuentes fo
 
 Con el servidor iniciado, `node verify-v3.mjs` ejecuta 44 comprobaciones usando el módulo de design-taste-frontend instalado en esta máquina. `npm run check` verifica sintaxis. Las pruebas no envían mensajes. Servidor solo para vista previa local.
 
-RTK, Headroom y Caveman no quedaron instalados. No hubo cambios globales ni publicación.
+RTK, Headroom y Caveman no quedaron instalados. No hubo cambios globales. Publicación actualizada en GitHub Pages.
 
 ## Actualización v4
 Portátil animado por scroll sin barra. Cuatro ejemplos visibles juntos abren experiencias accesibles en un diálogo: catálogo con fichas y filtros, tienda con talles y selección, carta con ingredientes y agenda con servicio/día/horario. Los datos son ilustrativos.

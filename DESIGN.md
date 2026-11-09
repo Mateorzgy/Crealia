@@ -58,4 +58,3 @@ Encabezado fijo con contacto. Portátil con separación de capas vinculada al sc
 - Do concentrar las interacciones en ejemplos breves y controles accesibles.
 - Don't presentar conceptos ficticios como trabajos de clientes.
 - Don't añadir movimiento constante ni información densa.
-

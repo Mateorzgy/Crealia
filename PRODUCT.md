@@ -3,7 +3,7 @@
 ## Platform
 web
 ## Stack
-Static HTML, CSS, JavaScript. Hosting pending.
+Static HTML, CSS, JavaScript. Hosting: GitHub Pages.
 ## Users
 Small business owners in Uruguay seeking professional websites.
 ## Product Purpose
@@ -18,4 +18,3 @@ Seven style references, not client work. Local stock photos with sources in cred
 WhatsApp +59892050059; Instagram https://www.instagram.com/crealia_uy/.
 ## Product Principles
 Explicit offer, concise examples, clear contact, honest illustrative concepts.
-
