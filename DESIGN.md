@@ -7,6 +7,9 @@ colors:
   paper: "#fcfbf8"
   muted: "#60605a"
   field: "#e4e0d8"
+  accent: "#495b4d"
+  accent-dark: "#35463a"
+  accent-soft: "#e0e5db"
 typography:
   display:
     fontFamily: "Poppins, sans-serif"
@@ -36,7 +39,7 @@ components:
 Dirección profesional, clara y contenida definida por el usuario y sus referencias. Se conserva la identidad monocroma, con profundidad concentrada en los objetos ilustrativos. Actualización de la dirección clara existente, no sustitución de marca.
 
 ## Colors
-Fondo beige continuo, papel para formularios y ejemplos, tinta oscura para texto y acciones. Color fotográfico contenido; el verde original ya no dirige la interfaz.
+Fondo beige continuo, papel para formularios y ejemplos, tinta oscura para texto y acciones. A pedido del usuario, verde salvia discreto en acciones principales, fondos de apoyo y tarjetas de reseñas; se conserva el predominio beige. Color fotográfico contenido; el verde original ya no dirige la interfaz.
 
 ## Typography
 Poppins 500 para títulos y marca; Inter para texto y controles. El título móvil usa clamp(40px,10.7vw,58px), con 40px hasta 350px. El texto de lectura mantiene 16px; ilustraciones de dispositivos tienen escala propia y no contienen controles esenciales.
@@ -52,6 +55,8 @@ Botones redondeados, paneles discretamente curvos, opciones rectangulares. La si
 
 ## Components
 Encabezado fijo con contacto. Portátil con separación de capas vinculada al scroll; composición estática con movimiento reducido. Cuatro ejemplos visibles en una grilla de cuatro columnas, dos en móvil. Cada ejemplo abre un diálogo nativo con foco contenido, cierre por Escape y retorno al disparador: fichas de producto, selección de compra, carta o agenda. Todos identificados como demostraciones. Cuestionario con opciones nativas, progreso, validación y regreso sin pérdida de respuestas. En móvil, WhatsApp flotante se oculta al verse el portátil, formulario o pie. El contacto del encabezado permanece disponible. Foco visible y movimiento reducido; ninguna información depende de animaciones.
+
+Logo y favicon consistentes en páginas de reseñas y créditos. Acceso al panel en el pie de la web. Volver a la web abre la URL pública canónica. Reseñas en tarjetas superpuestas: avance automático cada seis segundos con dos o más opiniones; pausa durante lectura, interacción de teclado o movimiento reducido.
 
 ## Do's and Don'ts
 - Do mantener una propuesta explícita y contacto visible.

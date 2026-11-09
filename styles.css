@@ -48,3 +48,9 @@
 .reviews-section [hidden]{display:none!important}
 .testimonial-card[data-slot=previous],.testimonial-card[data-slot=next]{height:320px;max-height:320px;overflow:hidden}.testimonial-card:not([data-slot=active]) .testimonial-quote{font-size:19px;-webkit-line-clamp:4;display:-webkit-box;margin-bottom:18px}.testimonial-card:not([data-slot=active]) .testimonial-expand{display:none}.review-navigation{position:relative;z-index:5}
 @media(min-width:801px){.review-backplate{width:320px;height:265px;top:65px}.reviews-in-view[data-count="1"] .backplate-one{transform:translateX(-90%) translateY(10px) rotate(-10deg)}.reviews-in-view[data-count="1"] .backplate-two{transform:translateX(-10%) translateY(10px) rotate(10deg)}}
+.footer-links{display:flex;align-items:center;gap:22px;font-size:13px}.footer-links a{padding:10px 0}.footer-links a:hover{text-decoration:underline;text-underline-offset:5px}.credits-back{font-size:13px;text-decoration:underline;text-underline-offset:5px}
+@media(max-width:560px){.footer-links{margin-left:auto;gap:18px}}
+
+/* Discreet sage accents, keeping the warm editorial ground. */
+:root{--accent:#495b4d;--accent-dark:#35463a;--accent-soft:#e0e5db}
+.hero .button,.quiz-actions .button{background:var(--accent)}.hero .button:hover,.quiz-actions .button:hover{background:var(--accent-dark)}.intro-line{background:var(--accent-soft)}.service-list svg{color:var(--accent)}.quiz-option:has(input:checked){background:#dce4d6}.quiz-progress>span{background:var(--accent)}.quiz-option input{accent-color:var(--accent)}.backplate-one{background:var(--accent-dark)}.backplate-two{background:#d8dfd0}.testimonial-card[data-slot=next]{background:var(--accent-dark)}.testimonial-card[data-slot=previous]{background:#d8dfd0}.testimonial-avatar{background:var(--accent-soft);color:var(--accent-dark)}.contact-inner{background:var(--accent-dark)}.footer-links a:last-child{color:var(--accent-dark)}

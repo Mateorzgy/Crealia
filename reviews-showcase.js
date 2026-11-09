@@ -9,7 +9,7 @@ function measure(){const active=track.children[index];if(active)stage.style.setP
 function show(next,manual=false){index=(next+items.length)%items.length;const count=items.length;
 [...track.children].forEach((card,i)=>{let slot='away';if(i===index)slot='active';else if(i===(index+1)%count)slot='next';else if(i===(index-1+count)%count)slot='previous';card.dataset.slot=slot;card.setAttribute('aria-hidden',String(i!==index));card.inert=i!==index;});
 position.textContent=(index+1)+' / '+count;measure();if(manual)resetTimer();}
-function resetTimer(){clearInterval(timer);if(items.length<2)return;timer=setInterval(()=>{if(paused||reduced.matches||!visible||document.hidden||section.matches(':hover')||section.contains(document.activeElement)||track.querySelector('[data-slot=active]')?.classList.contains('is-expanded'))return;show(index+1);},6500);}
+function resetTimer(){clearInterval(timer);if(items.length<2)return;timer=setInterval(()=>{if(paused||reduced.matches||!visible||document.hidden||(matchMedia('(hover:hover)').matches&&track.querySelector('[data-slot=active]')?.matches(':hover'))||(section.contains(document.activeElement)&&document.activeElement.matches(':focus-visible'))||track.querySelector('[data-slot=active]')?.classList.contains('is-expanded'))return;show(index+1);},6000);}
 function updatePause(){toggle.hidden=reduced.matches;toggle.textContent=paused?'Reproducir':'Pausar';toggle.setAttribute('aria-label',paused?'Reproducir avance automático de reseñas':'Pausar avance automático de reseñas');}
 function render(reviews){
 items=reviews;index=0;track.replaceChildren();section.dataset.count=String(reviews.length);message.hidden=!!reviews.length;navigation.hidden=reviews.length<2;
