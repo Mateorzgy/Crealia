@@ -1,16 +1,61 @@
-# Crealia — light editorial revision
+---
+name: Crealia
+description: Diseño web profesional en beige, negro y blanco
+colors:
+  ink: "#222320"
+  background: "#f1eee8"
+  paper: "#fcfbf8"
+  muted: "#60605a"
+  field: "#e4e0d8"
+typography:
+  display:
+    fontFamily: "Poppins, sans-serif"
+    fontSize: "clamp(48px, 5.1vw, 76px)"
+    fontWeight: 500
+    lineHeight: 1.12
+    letterSpacing: "-.04em"
+  body:
+    fontFamily: "Inter, sans-serif"
+    fontSize: "16px"
+    lineHeight: 1.6
+rounded:
+  panel: "8px"
+  button: "40px"
+spacing:
+  gutter: "clamp(22px, 5.5vw, 90px)"
+components:
+  button-primary:
+    backgroundColor: "{colors.ink}"
+    textColor: "{colors.paper}"
+    rounded: "{rounded.button}"
+    padding: "16px 25px"
+---
+# Design System: Crealia
 
-## Authority
-2026-11-09 user correction and all seven images in fotos. Replaces the former dark/emerald, information-dense system. User chose beige, black and white, visual floating mockups, lighter motion, fewer messages and early contact. No random alternative overrides these explicit references.
+## Overview
+Dirección profesional, clara y contenida definida por el usuario y sus referencias. Se conserva la identidad monocroma, con profundidad concentrada en los objetos ilustrativos. Actualización de la dirección clara existente, no sustitución de marca.
 
-## Tokens
-Ground #f1eee8; ink/action #222320; paper #fcfbf8; secondary text #60605a; supporting field #e4e0d8. Poppins 500 for headings/brand; Inter 400–500 for body and controls. Headline tracking -.04em. Body 16px, notes at least13px outside miniature illustration. Desktop h1 clamp(52px,6vw,88px); h2 clamp(36px,4.2vw,60px). Fluid gutter22–90px. Desktop section space112px, mobile66px. Pill buttons, rectangular visual stages with5–8px corners. Depth shadows only on floating mockup layers and fixed mobile contact. These shadows and beige ground are explicitly supported by user references.
+## Colors
+Fondo beige continuo, papel para formularios y ejemplos, tinta oscura para texto y acciones. Color fotográfico contenido; el verde original ya no dirige la interfaz.
 
-## Composition
-Sticky plain header with contact. Two-column hero: short headline and black WhatsApp button; floated monochrome phone/catalogue composition on right. At800px the hero stacks; at560px left-aligned mobile copy and smaller authored composition. A short contact/social strip follows. One visual showcase changes four authored scenes on manual selection; it does not simulate a whole website, purchase, or reservation. Short three-item service explanation, compact black contact area, small footer. Mobile fixed WhatsApp respects safe area and footer padding.
+## Typography
+Poppins 500 para títulos y marca; Inter para texto y controles. El título móvil usa clamp(40px,10.7vw,58px), con 40px hasta 350px. El texto de lectura mantiene 16px; ilustraciones de dispositivos tienen escala propia y no contienen controles esenciales.
 
-## Behavior
-All contact links open the supplied number or Instagram profile. Category buttons expose aria-pressed, update visible content, images, alt text, and contextual WhatsApp message. No auto-cycling. No data collection. All content is visible without animation; IntersectionObserver adds small entrances. Three hero objects float over8–10seconds. Reduced motion removes travel and smooth scrolling. No marquee, pinning or scroll hijack.
+## Layout
+Contenedor máximo 1600px. Hero de dos columnas que se apila hasta 800px. Márgenes móviles 22px. Secciones de 112px de separación superior, reducidas a 66px en móvil. Cuestionario en dos columnas en escritorio y una en móvil; una pregunta visible por paso. Intro fija solo en escritorio. Sin secuestro del scroll.
 
-## Scope
-Previous revision backed up under .history/v1. All previous 55-test claims refer to v1, not this redesign. v2 uses new verification. Photos remain illustrative; incoming style references are not client projects. Hosting pending.
+## Elevation & Depth
+Sombras suaves en pantalla, capas y teclado para expresar la separación espacial de la referencia. Formulario y selección de funciones se distinguen por superficies tonales.
+
+## Shapes
+Botones redondeados, paneles discretamente curvos, opciones rectangulares. La silueta del portátil es ilustrativa; los controles permanecen fuera del modelo.
+
+## Components
+Encabezado fijo con contacto. Portátil con separación de capas vinculada al scroll; composición estática con movimiento reducido. Cuatro ejemplos visibles en una grilla de cuatro columnas, dos en móvil. Cada ejemplo abre un diálogo nativo con foco contenido, cierre por Escape y retorno al disparador: fichas de producto, selección de compra, carta o agenda. Todos identificados como demostraciones. Cuestionario con opciones nativas, progreso, validación y regreso sin pérdida de respuestas. En móvil, WhatsApp flotante se oculta al verse el portátil, formulario o pie. El contacto del encabezado permanece disponible. Foco visible y movimiento reducido; ninguna información depende de animaciones.
+
+## Do's and Don'ts
+- Do mantener una propuesta explícita y contacto visible.
+- Do concentrar las interacciones en ejemplos breves y controles accesibles.
+- Don't presentar conceptos ficticios como trabajos de clientes.
+- Don't añadir movimiento constante ni información densa.
+
