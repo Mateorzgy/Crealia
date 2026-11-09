@@ -22,3 +22,11 @@ Repositorio publicado: https://github.com/Mateorzgy/Crealia
 Web: https://mateorzgy.github.io/Crealia/
 La copia Git está en la subcarpeta Crealia. GitHub Pages publica los cambios enviados a su rama; guardar en VS Code por sí solo no hace push.
 Pruebas actuales: node verify-v4.mjs.
+
+## Reseñas con invitación y aprobación
+Prueba interactiva: resenas-admin.html?demo=1. Datos ficticios guardados solo en ese navegador, aislados de la portada.
+Panel real: resenas-admin.html. Formulario privado: opinion.html con token en el fragmento de la URL.
+La integración Supabase está preparada pero todavía NO configurada. Seguir RESEÑAS.md.
+Con Supabase activado, aprobar una reseña la hace visible al cargar la web sin editar archivos ni desplegar.
+No hay publicación libre: solo invitaciones únicas y aprobación administrativa. El enlace se comparte manualmente; no hay notificaciones ni mensajes automáticos.
+Pruebas del cliente API: npm test. Sintaxis: npm run check.

@@ -1,0 +1,13 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import vm from 'node:vm';
+import fs from 'node:fs';
+const source=fs.readFileSync(new URL('../reviews-api.js',import.meta.url),'utf8');
+function api(fetch,config={url:'https://project.example/',publishableKey:'sb_publishable_example'}){const window={CREALIA_REVIEW_CONFIG:config};vm.runInNewContext(source,{window,fetch,AbortSignal,Error,JSON});return window.CrealiaReviews;}
+test('Unconfigured API never sends data',async()=>{let called=false;const client=api(()=>{called=true;},{});await assert.rejects(client.rpc('list_published_reviews'),/todavía no está conectada/);assert.equal(called,false);});
+test('Anonymous requests carry public key, no admin token',async()=>{let request;const client=api(async(url,args)=>{request={url,...args};return {ok:true,json:async()=>[]};});await client.rpc('list_published_reviews');assert.equal(request.url,'https://project.example/rest/v1/rpc/list_published_reviews');assert.equal(request.headers.apikey,'sb_publishable_example');assert.equal(request.headers.Authorization,undefined);});
+test('Admin requires login and authorization; logout clears access',async()=>{const requests=[];const client=api(async(url,args)=>{requests.push({url,...args});return {ok:true,json:async()=>url.includes('/auth/')?{access_token:'test-user-token'}:{reviews:[],invitations:[]}};});await assert.rejects(client.rpc('review_admin_overview',{},true),/Iniciá sesión/);await client.login('owner@example.com','example password');assert.equal(requests[1].headers.Authorization,'Bearer test-user-token');await client.rpc('list_published_reviews');assert.equal(requests[2].headers.Authorization,undefined);client.logout();await assert.rejects(client.rpc('review_admin_overview',{},true),/Iniciá sesión/);});
+test('Authenticated non-admin is denied and token discarded',async()=>{const client=api(async url=>url.includes('/auth/')?{ok:true,json:async()=>({access_token:'non-admin'})}:{ok:false,status:403,json:async()=>({message:'denied'})});await assert.rejects(client.login('visitor@example.com','password'),/no autorizado/);await assert.rejects(client.rpc('review_admin_overview',{},true),/Iniciá sesión/);});
+test('Network failure is recoverable and has a useful message',async()=>{const client=api(async()=>{throw new Error('offline');});await assert.rejects(client.rpc('list_published_reviews'),/Revisá tu conexión/);});
+test('Backend validation message is preserved',async()=>{const client=api(async()=>({ok:false,status:400,json:async()=>({message:'Invitación inválida, vencida o ya utilizada.'})}));await assert.rejects(client.rpc('submit_customer_review'),/ya utilizada/);});
+

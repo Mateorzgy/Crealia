@@ -22,3 +22,9 @@ Fotos locales de Unsplash, fuentes en creditos.html. Autoría individual no veri
 ## Revisión v4
 44/44 comprobaciones funcionales en 1440, 768, 390 y 320px. Probados los cuatro diálogos, filtros/fichas, selección de talles, quitar productos, ingredientes, día/horario, cierre, anchura y cuestionario completo. Movimiento por scroll medido en 1440, 390 y 320px: la separación cambia al avanzar 200px. Sin desbordamiento de diálogo. Capturas en .impeccable/review-v4. La revisión se realizó directamente; no se atribuye aprobación independiente.
 Reseñas sin datos reales: sección preparada y oculta. No integración Google ni testimonios inventados.
+
+## Sistema de reseñas — 9/11/2026
+Implementados formulario privado, panel de aprobación, invitaciones de un uso, conexión de lectura de reseñas publicadas y demo aislada en el navegador. La migración SQL y autenticación Supabase están preparadas, pendientes de crear/configurar el proyecto del usuario. No se afirma que la integración esté operativa.
+39/39 pruebas de recorrido de la demo en 1440, 390 y 320px: invitación, campos requeridos, pendiente sin publicación, puntuación baja publicable, texto seguro, un uso, revocación, ocultación y ausencia de datos de prueba en la portada. Corregida la recarga del estado al cambiar el token de la URL.
+6/6 pruebas del cliente API con respuestas simuladas: no envíos sin configuración, clave pública, sesión administrativa, rechazo de usuario no autorizado, cierre de sesión y errores recuperables.
+La SQL no se ejecutó en una base real; RLS, autenticación y concurrencia deben comprobarse al conectar Supabase. No se enviaron invitaciones ni mensajes a clientes.

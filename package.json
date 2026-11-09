@@ -1,1 +1,1 @@
-{"name":"crealia","version":"1.0.0","private":true,"type":"module","scripts":{"dev":"node server.mjs","check":"node --check app.js"}}
+{"name":"crealia","version":"1.0.0","private":true,"type":"module","scripts":{"dev":"node server.mjs","check":"node --check app.js && node --check reviews-api.js && node --check reviews-admin.js && node --check reviews-client.js && node --check reviews-form.js","test":"node --test tests/*.test.mjs"}}
