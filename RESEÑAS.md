@@ -39,3 +39,6 @@ Fuentes oficiales:
 - https://supabase.com/docs/guides/getting-started/api-keys
 - https://supabase.com/docs/guides/auth/passwords
 
+
+## Actualización de formulario
+Las opiniones pueden consistir únicamente en la puntuación, o incluir texto de hasta 1200 caracteres. Las sugerencias son opcionales y editables. Para instalaciones previas, ejecutar supabase/reviews-optional-text.sql una vez; el archivo inicial reviews.sql ya incluye esta validación. El consentimiento y la aprobación administrativa siguen siendo obligatorios.

@@ -32,3 +32,8 @@ La SQL no se ejecutó en una base real; RLS, autenticación y concurrencia deben
 ## Conexión Supabase verificada
 El proyecto configurado responde: listado público 200 con cero reseñas; invitación inválida devuelve valid:false; listado administrativo y creación de invitaciones rechazan acceso anónimo con 401. El usuario ejecutó la migración SQL correctamente.
 Pendiente: crear/autorizar el usuario administrador y verificar el recorrido real autenticado, incluidos envío único y moderación.
+
+## Formulario de reseñas mejorado
+Cinco estrellas SVG con selección animada, teclado y movimiento reducido. Errores por campo con resumen y foco en el primer dato faltante. Comentario opcional, sin mínimo y con máximo de 1200 caracteres. Frases rápidas opcionales y editables; no sobrescriben lo escrito, no duplican frases ni predeterminan una opinión positiva.
+El usuario ejecutó supabase/reviews-optional-text.sql con Success. Una petición sin texto y con token inválido alcanza la validación del token (ya no falla por longitud), sin insertar datos.
+36/36 comprobaciones en 1440, 390 y 320 px: estrellas, corrección de errores, teclado, movimiento reducido, frases sin duplicación, envío corto, puntuación sin comentario, reintento sin pérdida de texto y ausencia de desbordamiento/errores de consola. Capturas locales en .impeccable/reviews-form-v2.
