@@ -1,5 +1,4 @@
-// Public configuration only. NEVER use a secret or service_role key.
 window.CREALIA_REVIEW_CONFIG = {
-  url: '',
-  publishableKey: ''
+  url: 'https://dyibrizauvgbheyeutjz.supabase.co',
+  publishableKey: 'sb_publishable_JV4-FkMT6wgQM02pFCqpOw_oQtOpckF'
 };

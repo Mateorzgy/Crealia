@@ -28,3 +28,7 @@ Implementados formulario privado, panel de aprobación, invitaciones de un uso, 
 39/39 pruebas de recorrido de la demo en 1440, 390 y 320px: invitación, campos requeridos, pendiente sin publicación, puntuación baja publicable, texto seguro, un uso, revocación, ocultación y ausencia de datos de prueba en la portada. Corregida la recarga del estado al cambiar el token de la URL.
 6/6 pruebas del cliente API con respuestas simuladas: no envíos sin configuración, clave pública, sesión administrativa, rechazo de usuario no autorizado, cierre de sesión y errores recuperables.
 La SQL no se ejecutó en una base real; RLS, autenticación y concurrencia deben comprobarse al conectar Supabase. No se enviaron invitaciones ni mensajes a clientes.
+
+## Conexión Supabase verificada
+El proyecto configurado responde: listado público 200 con cero reseñas; invitación inválida devuelve valid:false; listado administrativo y creación de invitaciones rechazan acceso anónimo con 401. El usuario ejecutó la migración SQL correctamente.
+Pendiente: crear/autorizar el usuario administrador y verificar el recorrido real autenticado, incluidos envío único y moderación.
