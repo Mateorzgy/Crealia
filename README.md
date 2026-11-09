@@ -30,3 +30,6 @@ La integración Supabase está preparada pero todavía NO configurada. Seguir RE
 Con Supabase activado, aprobar una reseña la hace visible al cargar la web sin editar archivos ni desplegar.
 No hay publicación libre: solo invitaciones únicas y aprobación administrativa. El enlace se comparte manualmente; no hay notificaciones ni mensajes automáticos.
 Pruebas del cliente API: npm test. Sintaxis: npm run check.
+
+## Reseñas en portada
+La sección está después de los ejemplos. Lee opiniones aprobadas desde Supabase y muestra tarjetas superpuestas. El avance automático se activa con dos o más opiniones y se puede pausar. Opiniones largas expandibles. Con una reseña no se duplican testimonios; las otras capas son decorativas. Con cero reseñas se muestra un mensaje honesto. Las reseñas cuyo autor o negocio contiene “prueba” o “test” se identifican como pruebas. No aprobar datos ficticios como experiencias reales.
