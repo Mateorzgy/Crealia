@@ -48,3 +48,7 @@ Logo Crealia visible en panel, formulario, créditos y pie de portada; favicon a
 Acentos salvia discretos en CTA principal, formulario, franja introductoria, reseñas y contacto. Base beige conservada.
 Carrusel automático cada 6 segundos con dos o más reseñas; el cursor sobre el título ya no lo bloquea. Pausa sobre la tarjeta activa, foco visible de teclado, pestaña oculta, fuera de vista, opinión expandida o movimiento reducido. Reproducir con clic vuelve a activar el avance.
 39 comprobaciones de marca, enlaces, favicon y anchura en 1440, 390 y 320px. Tres pruebas adicionales de avance, pausa y reanudación con clic real. Capturas en .impeccable/brand-navigation. Actualmente una sola reseña pública; no se duplica para simular rotación.
+
+## Atajos de reseñas — 10/11/2026
+Por pedido del titular, se muestran cuatro frases positivas opcionales. No hay selección automática, cambios en la puntuación ni bloqueo de comentarios escritos libremente. Botones grandes con Agregar/Agregada, fondo de selección y aviso visible persistente con aria-live. En móvil se apilan en una columna. Los atajos conservan el texto, evitan duplicados y vuelven al estado Agregar cuando se borra la frase.
+27 comprobaciones funcionales en 1440, 390 y 320px: opciones, estado seleccionado, aviso, texto conservado, no duplicados, cinco puntuaciones disponibles, sincronización al editar, confirmación y ausencia de desbordamiento.
