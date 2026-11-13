@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "barberia",
+    "key": "barber",
+    "name": "Distrito",
+    "category": "Barbería"
+  },
+  {
+    "slug": "moda",
+    "key": "moda",
+    "name": "Forma",
+    "category": "Moda"
+  },
+  {
+    "slug": "comida",
+    "key": "comida",
+    "name": "Brasa",
+    "category": "Hamburguesería"
+  },
+  {
+    "slug": "cafeteria",
+    "key": "cafe",
+    "name": "Miga",
+    "category": "Café & pan"
+  },
+  {
+    "slug": "estetica",
+    "key": "estetica",
+    "name": "Aura",
+    "category": "Estudio de bienestar"
+  }
+]

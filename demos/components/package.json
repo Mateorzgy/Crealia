@@ -1,0 +1,8 @@
+{
+  "name":"crealia-demo-interactions",
+  "private":true,
+  "type":"module",
+  "scripts":{"build":"esbuild entry.jsx --bundle --minify --format=esm --jsx=automatic --target=es2020 --legal-comments=linked --outfile=../interactive.js"},
+  "dependencies":{"react":"19.3.1","react-dom":"19.3.1","gsap":"3.15.1"},
+  "devDependencies":{"esbuild":"0.28.2"}
+}
