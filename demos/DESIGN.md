@@ -171,3 +171,7 @@ Brasa is explicitly neobrutalist: yellow #ffdf5a, tomato #e94432, ink #191919, 3
 Forma mounts the actual React Bits CircularCarousel in a local React island: cylinder, assemble entrance, draggable with momentum and snapping, keyboard arrows, no autoplay. Aura mounts original AccordionGallery with GSAP: horizontal desktop, vertical 480px mobile; active panel gets 55% of space. Hover/focus/touch selection, inactive labels hidden. Original licenses live in components. Shared markup remains static HTML.
 
 Entrance motion is concentrated in hero elements and editorial photographs. Blanket headings, product, menu and form reveals were removed following finish review. Reduced-motion support remains.
+
+## Individual endings and demo disclosure
+Each demo uses its own closing composition in personality.css: Distrito signage, Forma editorial colophon, Brasa order ticket, Miga coffee table, Aura centered invitation. Repeated oversized footer wordmarks removed. Visible top notice and each closing explain that these are fictional examples and custom designs/functions are available. Mobile layout verified at 390px, tablet768, desktop1440; 30 checks passed.
+
