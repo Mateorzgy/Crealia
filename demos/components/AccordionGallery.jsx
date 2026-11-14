@@ -32,7 +32,11 @@ const AccordionGallery = ({
   trigger = 'hover',
   showLabels = true,
   grayscale = true,
-  className = ''
+  className = '',
+  autoplay = false,
+  activeIndex,
+  onChange,
+  onInteract
 }) => {
   const rootRef = useRef(null);
   const panelRefs = useRef([]);
@@ -51,6 +55,17 @@ const AccordionGallery = ({
     typeof window !== 'undefined' && window.matchMedia
       ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
       : false;
+
+  useEffect(() => { if (activeIndex !== undefined) setActive(activeIndex); }, [activeIndex]);
+  useEffect(() => { onChange?.(active); }, [active, onChange]);
+  useEffect(() => {
+    if (!autoplay || prefersReduced) return;
+    const timer = setInterval(() => {
+      const r = rootRef.current?.getBoundingClientRect();
+      if (!document.hidden && r && r.bottom > 0 && r.top < innerHeight) setActive(i => (i + 1) % count);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [autoplay, prefersReduced, count]);
 
   const applyLayout = useCallback(
     animate => {
@@ -157,17 +172,17 @@ const AccordionGallery = ({
   );
 
   const handleEnter = i => {
-    if (trigger === 'hover') setActive(i);
+    if (trigger === 'hover' && matchMedia('(hover: hover)').matches) { onInteract?.(); setActive(i); }
   };
 
   const handleClick = (i, e) => {
-    if (i !== active) {
-      e.preventDefault();
-      setActive(i);
-    }
+    e.preventDefault();
+    onInteract?.();
+    setActive(i);
   };
 
   const handleKeyDown = (i, e) => {
+    onInteract?.();
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
       e.preventDefault();
       setActive((i + 1) % count);
@@ -189,26 +204,25 @@ const AccordionGallery = ({
         '--ag-radius': `${radius}px`,
         height: vertical ? `${Math.round(height * 1.6)}px` : `${height}px`
       }}
-      role="list"
-      aria-label="Image accordion gallery"
+      role="group"
+      aria-label="Galería de rituales"
     >
       {items.map((item, i) => {
         const isActive = i === active;
-        const Tag = item.link ? 'a' : 'div';
+        const Tag = 'button';
         return (
           <Tag
             key={i}
             ref={el => (panelRefs.current[i] = el)}
             className={`ag-panel${isActive ? ' ag-panel--active' : ''}`}
             style={{ borderRadius: `${radius}px` }}
-            href={item.link || undefined}
+            type="button"
             onClick={e => handleClick(i, e)}
             onMouseEnter={() => handleEnter(i)}
-            onFocus={() => setActive(i)}
+            onFocus={() => { onInteract?.(); setActive(i); }}
             onKeyDown={e => handleKeyDown(i, e)}
-            role="listitem"
             tabIndex={0}
-            aria-current={isActive ? 'true' : undefined}
+            aria-pressed={isActive}
             aria-label={item.label}
           >
             <span className="ag-panel__frame">

@@ -31,3 +31,5 @@ Mordida: 12 opciones, filtros, ficha modal con cantidad y pedido local. Ilustrac
 Miga: carta de diez opciones para llevar y pedido local; escena fotográfica generada con IA y chorro animado de servido, reproducción automática al entrar y botón para repetir. Movimiento reducido muestra taza servida.
 
 coffee-ritual.png creado con image_gen integrado: fotografía de estudio de cafetera verde suspendida sobre taza de cerámica, fondo salvia, sin chorro (animado en código). espresso.jpg: Unsplash photo-1510707577719-ae7c14805e3a.
+
+Aura: cortinas con botones sin navegación, reproducción cada5s solo en pantalla y pestaña visible, pausa al interactuar y control de reproducción. Movimiento reducido desactiva autoavance. Selector de ritual transmite elección a agenda; escena fotográfica con apertura ligada al scroll.
