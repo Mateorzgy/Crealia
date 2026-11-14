@@ -1,0 +1,128 @@
+[
+  {
+    "src": "../assets/outfit-0.jpg",
+    "alt": "Entre calles: Abrigo Escocia y Bolso Trama",
+    "title": "Entre calles",
+    "garments": [
+      {
+        "id": "look-0-a",
+        "name": "Abrigo Escocia",
+        "price": 3490,
+        "x": 58,
+        "y": 58
+      },
+      {
+        "id": "look-0-b",
+        "name": "Bolso Trama",
+        "price": 1890,
+        "x": 50,
+        "y": 90
+      }
+    ]
+  },
+  {
+    "src": "../assets/outfit-1.jpg",
+    "alt": "Días eléctricos: Top Nube y Pantalón Ritmo",
+    "title": "Días eléctricos",
+    "garments": [
+      {
+        "id": "look-1-a",
+        "name": "Top Nube",
+        "price": 990,
+        "x": 53,
+        "y": 43
+      },
+      {
+        "id": "look-1-b",
+        "name": "Pantalón Ritmo",
+        "price": 2290,
+        "x": 57,
+        "y": 72
+      }
+    ]
+  },
+  {
+    "src": "../assets/outfit-2.jpg",
+    "alt": "Sin apuro: Chaqueta Vino y Top Blanco",
+    "title": "Sin apuro",
+    "garments": [
+      {
+        "id": "look-2-a",
+        "name": "Chaqueta Vino",
+        "price": 2890,
+        "x": 55,
+        "y": 45
+      },
+      {
+        "id": "look-2-b",
+        "name": "Top Blanco",
+        "price": 890,
+        "x": 47,
+        "y": 64
+      }
+    ]
+  },
+  {
+    "src": "../assets/outfit-4.jpg",
+    "alt": "Azul de ciudad: Abrigo Cielo y Bandolera Rosa",
+    "title": "Azul de ciudad",
+    "garments": [
+      {
+        "id": "look-3-a",
+        "name": "Abrigo Cielo",
+        "price": 3990,
+        "x": 62,
+        "y": 40
+      },
+      {
+        "id": "look-3-b",
+        "name": "Bandolera Rosa",
+        "price": 1690,
+        "x": 46,
+        "y": 53
+      }
+    ]
+  },
+  {
+    "src": "../assets/outfit-5.jpg",
+    "alt": "Domingo rojo: Buzo Tomato y Legging Rojo",
+    "title": "Domingo rojo",
+    "garments": [
+      {
+        "id": "look-4-a",
+        "name": "Buzo Tomato",
+        "price": 1890,
+        "x": 48,
+        "y": 49
+      },
+      {
+        "id": "look-4-b",
+        "name": "Legging Rojo",
+        "price": 1290,
+        "x": 50,
+        "y": 90
+      }
+    ]
+  },
+  {
+    "src": "../assets/moda-2.jpg",
+    "alt": "Un clásico: Camisa Alba y Corbata Puntos",
+    "title": "Un clásico",
+    "garments": [
+      {
+        "id": "look-5-a",
+        "name": "Camisa Alba",
+        "price": 1490,
+        "x": 67,
+        "y": 50
+      },
+      {
+        "id": "look-5-b",
+        "name": "Corbata Puntos",
+        "price": 790,
+        "x": 50,
+        "y": 42
+      }
+    ]
+  }
+]

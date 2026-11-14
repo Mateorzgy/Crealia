@@ -24,3 +24,5 @@ Inter y Poppins: SIL Open Font License en assets del sitio. Zodiak de Indian Typ
 CircularCarousel y AccordionGallery: React Bits, David Haz; licencia MIT + Commons Clause incluida en components/REACT-BITS-LICENSE.md. Integrados como parte de este sitio, no ofrecidos como biblioteca independiente. Neobrutalism Components: ekmas, licencia MIT en components/NEOBRUTALISM-LICENSE.txt. Sus reglas de botones se adaptaron al CSS de Brasa.
 
 La home conserva su carrusel original de JavaScript. Forma y Aura utilizan los componentes originales. El sistema de diseño documentado se limita a esta carpeta; no reemplaza el diseño general de Crealia.
+
+Forma: seis looks fotografiados y doce prendas ilustrativas. Los puntos de cada look enlazan a fichas accesibles con talla/medida y selección local. Datos: components/looks.json. No regenerar el HTML con build-demos sin preservar estas mejoras.
