@@ -28,3 +28,6 @@ La home conserva su carrusel original de JavaScript. Forma y Aura utilizan los c
 Forma: seis looks fotografiados y doce prendas ilustrativas. Los puntos de cada look enlazan a fichas accesibles con talla/medida y selección local. Datos: components/looks.json. No regenerar el HTML con build-demos sin preservar estas mejoras.
 
 Mordida: 12 opciones, filtros, ficha modal con cantidad y pedido local. Ilustración de hamburguesa creada con la herramienta integrada image_gen, guardada en assets/burger-layers.png; seis capas compuestas con recortes SVG y progreso de scroll. Prompt: hamburguesa fotorrealista desarmada en seis capas alineadas (pan, vegetales, cheddar, carne, carne con cheddar, base), vista frontal, textura de estudio, sin texto.
+Miga: carta de diez opciones para llevar y pedido local; escena fotográfica generada con IA y chorro animado de servido, reproducción automática al entrar y botón para repetir. Movimiento reducido muestra taza servida.
+
+coffee-ritual.png creado con image_gen integrado: fotografía de estudio de cafetera verde suspendida sobre taza de cerámica, fondo salvia, sin chorro (animado en código). espresso.jpg: Unsplash photo-1510707577719-ae7c14805e3a.
