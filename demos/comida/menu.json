@@ -1,0 +1,86 @@
+[
+  {
+    "category": "Burgers",
+    "name": "La Original",
+    "description": "Carne, cheddar, tomate, lechuga y salsa de la casa.",
+    "price": 390,
+    "image": "../assets/comida-0.jpg"
+  },
+  {
+    "category": "Burgers",
+    "name": "Doble Mordida",
+    "description": "Dos medallones, doble cheddar y pan de sésamo.",
+    "price": 520,
+    "image": "../assets/comida-2.jpg"
+  },
+  {
+    "category": "Burgers",
+    "name": "Smash de la casa",
+    "description": "Doble smash, cebolla a la plancha y cheddar.",
+    "price": 490,
+    "image": "../assets/comida-1.jpg"
+  },
+  {
+    "category": "Burgers",
+    "name": "La Picante",
+    "description": "Carne, cheddar, jalapeños y mayo picante.",
+    "price": 450,
+    "image": "../assets/comida-0.jpg"
+  },
+  {
+    "category": "Burgers",
+    "name": "BBQ Club",
+    "description": "Carne, cebolla caramelizada y salsa barbacoa.",
+    "price": 470,
+    "image": "../assets/comida-1.jpg"
+  },
+  {
+    "category": "Burgers",
+    "name": "Triple Antojo",
+    "description": "Tres medallones, cheddar y salsa especial.",
+    "price": 650,
+    "image": "../assets/comida-2.jpg"
+  },
+  {
+    "category": "Papas",
+    "name": "Papas clásicas",
+    "description": "Una porción dorada con sal. Simple y perfecta.",
+    "price": 190,
+    "image": "../assets/comida-3.jpg"
+  },
+  {
+    "category": "Papas",
+    "name": "Papas con cheddar",
+    "description": "Papas, salsa de cheddar y verdeo.",
+    "price": 260,
+    "image": "../assets/comida-3.jpg"
+  },
+  {
+    "category": "Papas",
+    "name": "Papas picantes",
+    "description": "Papas con especias y mayo picante aparte.",
+    "price": 240,
+    "image": "../assets/comida-3.jpg"
+  },
+  {
+    "category": "Papas",
+    "name": "Papas para compartir",
+    "description": "Porción grande con dos salsas a elección.",
+    "price": 340,
+    "image": "../assets/comida-3.jpg"
+  },
+  {
+    "category": "Bebidas",
+    "name": "Limonada de la casa",
+    "description": "Limón, menta y mucho hielo. Vaso de 400 ml.",
+    "price": 180,
+    "image": "../assets/lemonade.jpg"
+  },
+  {
+    "category": "Bebidas",
+    "name": "Limonada jengibre",
+    "description": "Limón fresco y un toque de jengibre. 400 ml.",
+    "price": 190,
+    "image": "../assets/lemonade.jpg"
+  }
+]
