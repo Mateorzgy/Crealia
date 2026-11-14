@@ -33,3 +33,5 @@ Miga: carta de diez opciones para llevar y pedido local; escena fotográfica gen
 coffee-ritual.png creado con image_gen integrado: fotografía de estudio de cafetera verde suspendida sobre taza de cerámica, fondo salvia, sin chorro (animado en código). espresso.jpg: Unsplash photo-1510707577719-ae7c14805e3a.
 
 Aura: cortinas con botones sin navegación, reproducción cada5s solo en pantalla y pestaña visible, pausa al interactuar y control de reproducción. Movimiento reducido desactiva autoavance. Selector de ritual transmite elección a agenda; escena fotográfica con apertura ligada al scroll.
+
+Distrito: lookbook con swipe nativo y tres cortes de referencia; ticket dinámico según estilo, servicio, día y hora. Descarga .txt explícitamente marcada sin reserva. Asset assets/distrito-styles.png generado con image_gen integrado: tríptico fotográfico de tres hombres adultos con fade, raya clásica y rulos/textura, iluminación de estudio y fondo neutro.
