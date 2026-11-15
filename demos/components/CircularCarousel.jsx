@@ -706,6 +706,12 @@ const CircularCarousel = ({
     wakeRef.current();
   }, []);
 
+  useEffect(() => {
+    const choose = event => focusIndex(Number(event.detail));
+    window.addEventListener('choose-look', choose);
+    return () => window.removeEventListener('choose-look', choose);
+  }, [focusIndex]);
+
   const updatePointer = event => {
     const rect = rootRef.current.getBoundingClientRect();
     const pointer = stateRef.current.pointer;

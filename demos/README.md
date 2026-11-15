@@ -44,3 +44,5 @@ Mordida revisión: seis capítulos narrativos ligados al armado, flechas anterio
 
 Distrito revisión: lookbook de retratos retirado a petición del usuario. Ahora consulta de laterales, largo, notas y tintes; adicionales ilustrativos reflejados en ticket. Imágenes distrito-styles eliminadas del sitio publicado.
 Miga revisión: escena ampliada en móvil, chorro visible y cantidad0–180ml controlable con slider. Botones servir/pausar/reiniciar, reproducción inicial al entrar y pausa con pestaña oculta. Reducir movimiento entrega estado servido sin animación.
+
+Forma: un solo toque sobre la prenda ilumina su tejido y navega automáticamente a su ficha después de220ms; con movimiento reducido navega inmediatamente. Nuevo gesto cancela navegación pendiente. Volver al look también orienta el carrusel al outfit correcto.
