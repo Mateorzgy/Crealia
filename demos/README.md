@@ -43,3 +43,4 @@ Forma revisión: catálogo con packshots generados en assets/forma-products.jpg 
 Mordida revisión: seis capítulos narrativos ligados al armado, flechas anterior/siguiente y CTA final conectado a la ficha Doble Mordida.
 
 Distrito revisión: lookbook de retratos retirado a petición del usuario. Ahora consulta de laterales, largo, notas y tintes; adicionales ilustrativos reflejados en ticket. Imágenes distrito-styles eliminadas del sitio publicado.
+Miga revisión: escena ampliada en móvil, chorro visible y cantidad0–180ml controlable con slider. Botones servir/pausar/reiniciar, reproducción inicial al entrar y pausa con pestaña oculta. Reducir movimiento entrega estado servido sin animación.
