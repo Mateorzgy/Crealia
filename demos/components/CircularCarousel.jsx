@@ -204,6 +204,8 @@ const CircularCarousel = ({
   captions = false,
   onChange,
   onItemClick,
+  onGarmentSelect,
+  selectedGarment,
   className = '',
   style
 }) => {
@@ -813,6 +815,8 @@ const CircularCarousel = ({
     if (!card) return;
     const index = Number(card.getAttribute('data-cc-index'));
     if (focusOnClick) focusIndex(index);
+    const garment = event.target.closest?.('[data-garment]');
+    if (garment) { onGarmentSelect?.(garment.dataset.garment, index); return; }
     onItemClick?.(list[index], index);
   };
 
@@ -871,6 +875,12 @@ const CircularCarousel = ({
             decoding="async"
             style={photoStyle}
           />
+          {!back && item.garments && (() => {
+            const w = Math.min(cardW, cardH * item.ratio), h = w / item.ratio;
+            return <svg className="garment-map" viewBox="0 0 100 100" preserveAspectRatio="none" style={{position:'absolute',left:photoStyle.left+(cardW-w)/2,top:photoStyle.top+(cardH-h)/2,width:w,height:h}}>
+              {item.garments.map(g=>{const maskId=`garment-${g.id}-${tile.index}`;return <g key={g.id} className={`garment-region ${selectedGarment===g.id?'is-selected':''}`}><defs><clipPath id={maskId}><polygon points={g.shape}/></clipPath></defs><image className="garment-lit" href={item.src} x="0" y="0" width="100" height="100" preserveAspectRatio="none" clipPath={`url(#${maskId})`}/><polygon points={g.shape} data-garment={g.id} className={selectedGarment===g.id?'is-selected':''}><title>{g.name}</title></polygon></g>;})}
+            </svg>;
+          })()}
           {gone && (
             <img
               key={`leaving-${leaving.id}`}
