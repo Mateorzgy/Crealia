@@ -40,3 +40,4 @@ Las tres imágenes generadas tienen versiones JPEG calidad88 para servir en móv
 
 Revisión final: interacciones verificadas en390,768 y1440px; smoke test360px de las cinco demos sin errores JS, imágenes rotas, anclas faltantes ni overflow. Verificado movimiento reducido; swipe táctil real de la home mueve288px sin navegación accidental. Cada etapa se publicó por separado.
 Forma revisión: catálogo con packshots generados en assets/forma-products.jpg (image_gen integrado, doce prendas aisladas en cuadrícula4x3; abrigo a cuadros, bolso bordó, top blanco, pantalón rayado, chaqueta bordó, polera arena, abrigo azul, bandolera rosa, buzo rojo, legging rojo, camisa blanca y corbata). Polígonos clickeables sobre las prendas dentro del carrusel; primer toque ilumina, segundo abre ficha. Deslizar no abre productos.
+Mordida revisión: seis capítulos narrativos ligados al armado, flechas anterior/siguiente y CTA final conectado a la ficha Doble Mordida.
