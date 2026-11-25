@@ -1,10 +1,101 @@
 const $=s=>document.querySelector(s);
 $('#year').textContent=new Date().getFullYear();
 const motion=matchMedia('(prefers-reduced-motion: reduce)');
-const keyboard=$('.keyboard');for(let i=0;i<48;i++)keyboard.append(document.createElement('i'));
-let scrollQueued=false;
-function updateLayers(){scrollQueued=false;const r=$('#computer-stage').getBoundingClientRect();const progress=Math.max(0,Math.min(1,(innerHeight*.65-r.top)/(innerHeight*.75)));$('#computer').style.setProperty('--spread',motion.matches?1:progress);}
-addEventListener('scroll',()=>{if(!scrollQueued){scrollQueued=true;requestAnimationFrame(updateLayers);}},{passive:true});addEventListener('resize',updateLayers);motion.addEventListener('change',updateLayers);updateLayers();
+(()=>{
+  const stage=$('#computer-stage'),canvas=$('#computer-canvas'),poster=$('#computer-poster');
+  if(!stage||!canvas)return;
+  const ctx=canvas.getContext('2d');
+  const FRAME_COUNT=87;
+  const frames=new Array(FRAME_COUNT);
+  const frameSrc=i=>`assets/hero-frames/frame-${String(i+1).padStart(3,'0')}.webp`;
+  let targetProgress=0,currentProgress=0,drawnIndex=-1,rafId=0;
+
+  function findNearestLoaded(index){
+    if(frames[index])return frames[index];
+    for(let d=1;d<FRAME_COUNT;d++){
+      if(index-d>=0&&frames[index-d])return frames[index-d];
+      if(index+d<FRAME_COUNT&&frames[index+d])return frames[index+d];
+    }
+    return null;
+  }
+
+  function drawFrame(index){
+    const img=findNearestLoaded(index);
+    if(!img||!ctx)return;
+    ctx.drawImage(img,0,0,canvas.width,canvas.height);
+    stage.classList.add('is-ready');
+    drawnIndex=index;
+    stage.dataset.frame=String(index+1);
+  }
+
+  function updateTarget(){
+    if(motion.matches){
+      targetProgress=1;
+      currentProgress=1;
+      if(poster&&poster.dataset.staticApplied!=='1'){
+        poster.src=frameSrc(FRAME_COUNT-1);
+        poster.dataset.staticApplied='1';
+      }
+      drawFrame(FRAME_COUNT-1);
+      stage.dataset.progress='1.000';
+      return;
+    }
+    const scrollRange=innerWidth>800?280:Math.min(340,Math.max(250,innerHeight*.36));
+    targetProgress=Math.max(0,Math.min(1,scrollY/scrollRange));
+    if(!rafId)rafId=requestAnimationFrame(tick);
+  }
+
+  function tick(){
+    rafId=0;
+    const delta=targetProgress-currentProgress;
+    if(Math.abs(delta)<0.001){
+      currentProgress=targetProgress;
+    }else{
+      currentProgress+=delta*0.26;
+      rafId=requestAnimationFrame(tick);
+    }
+    stage.dataset.progress=currentProgress.toFixed(3);
+    const index=Math.min(FRAME_COUNT-1,Math.max(0,Math.round(currentProgress*(FRAME_COUNT-1))));
+    if(index!==drawnIndex)drawFrame(index);
+  }
+
+  function loadFrame(index){
+    if(frames[index])return;
+    const img=new Image();
+    img.decoding='async';
+    img.onload=()=>{
+      frames[index]=img;
+      const activeIndex=Math.min(FRAME_COUNT-1,Math.max(0,Math.round(currentProgress*(FRAME_COUNT-1))));
+      if(index===activeIndex||(drawnIndex===-1&&(index===0||motion.matches))){
+        drawFrame(activeIndex);
+      }
+    };
+    img.src=frameSrc(index);
+  }
+
+  // Load start/end frames first, then coarse-to-fine strides for instant scrubbing.
+  loadFrame(0);
+  loadFrame(FRAME_COUNT-1);
+  const order=[];
+  const seen=new Set([0,FRAME_COUNT-1]);
+  for(const stride of [8,4,2,1]){
+    for(let i=0;i<FRAME_COUNT;i+=stride){
+      if(!seen.has(i)){seen.add(i);order.push(i);}
+    }
+  }
+  let cursor=0;
+  function pump(){
+    const batch=4;
+    for(let k=0;k<batch&&cursor<order.length;k++)loadFrame(order[cursor++]);
+    if(cursor<order.length)setTimeout(pump,16);
+  }
+  pump();
+
+  addEventListener('scroll',updateTarget,{passive:true});
+  addEventListener('resize',updateTarget,{passive:true});
+  motion.addEventListener('change',updateTarget);
+  updateTarget();
+})();
 const projectState={step:0,business:'',goal:'',features:[],name:'',timeline:'Sin fecha definida',notes:''};
 const questions=[{title:'¿A qué se dedica tu negocio?',key:'business',choices:['Comercio o indumentaria','Gastronomía','Gimnasio o entrenamiento','Belleza o barbería','Perfumes, velas o cosmética','Artesanías','Servicios profesionales','Otro emprendimiento']},{title:'¿Qué querés lograr con tu web?',key:'goal',choices:['Presentar mi negocio','Mostrar un catálogo','Vender online','Recibir consultas o reservas','Todavía necesito orientación']},{title:'¿Qué funciones te interesan?',key:'features',choices:['WhatsApp e Instagram','Catálogo de productos','Carrito y pagos','Menú digital','Turnos o reservas','Formulario de consultas','Necesito asesoramiento']}];
 function saveDetails(){if(projectState.step===3){projectState.name=$('#project-name')?.value.trim()||'';projectState.timeline=$('#project-time')?.value||'Sin fecha definida';projectState.notes=$('#project-notes')?.value.trim()||'';}}
