@@ -22,6 +22,7 @@ const motion=matchMedia('(prefers-reduced-motion: reduce)');
   function drawFrame(index){
     const img=findNearestLoaded(index);
     if(!img||!ctx)return;
+    ctx.clearRect(0,0,canvas.width,canvas.height);
     ctx.drawImage(img,0,0,canvas.width,canvas.height);
     stage.classList.add('is-ready');
     drawnIndex=index;
